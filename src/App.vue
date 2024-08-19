@@ -1,18 +1,22 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import home from './views/HomeView.vue'
 </script>
 
 <template>
   <div class="flex flex-row">
     <aside id="default-sidebar" class="top-0 left-0 z-40 w-96 h-screen" aria-label="Sidebar">
       <!-- side content -->
-      <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800"></div>
+      <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
+        <h1><span class="underline underline-offset-4">Phasit</span> Udompanish</h1>
+        <h2>Full-Stack Developer</h2>
+        <img src="../public/images/SIT288cropped.png"
+      </div>
     </aside>
 
     <div class="flex-1 flex flex-col">
       <!-- navbar -->
-      <div class="bg-white border-gray-200 dark:bg-gray-800 h-16">
+      <div class="bg-white border-gray-200 dark:bg-amber-400 h-16">
         <div class="flex flex-wrap justify-between items-center">
           <a class="flex items-center pt-2 pl-3 pr-3 pb-2 bg-orange-500">
             <v-icon name="io-home-sharp" scale="2.5" />
@@ -21,10 +25,10 @@ import HelloWorld from './components/HelloWorld.vue'
           <div class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1">
             <ul class="flex flex-col font-medium lg:flex-row lg:space-x-8">
               <li>
-                <a class="text-gray-400">Resume</a>
+                <a class="text-black">Resume</a>
               </li>
               <li>
-                <a class="text-gray-400">Portfolio</a>
+                <a class="text-black">Portfolio</a>
               </li>
             </ul>
           </div>
@@ -61,7 +65,7 @@ import HelloWorld from './components/HelloWorld.vue'
         </div>
       </div>
       <!-- Content -->
-      <div>content</div>
+      <div><home> </home></div>
     </div>
   </div>
 </template>
