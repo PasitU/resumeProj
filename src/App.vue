@@ -1,34 +1,134 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterLink, RouterView, useRoute } from 'vue-router'
 import home from './views/HomeView.vue'
 </script>
 
 <template>
-  <div class="flex flex-row">
-    <aside id="default-sidebar" class="top-0 left-0 z-40 w-96 h-screen" aria-label="Sidebar">
+  <div class="flex flex-row" style="background-color: rgb(29, 35, 42)">
+    <aside id="default-sidebar" class="top-0 left-0 z-40 w-max h-max" aria-label="Sidebar">
       <!-- side content -->
-      <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
+      <div class="h-full px-3 py-4 overflow-hidden dark:bg-gray-800">
         <h1><span class="underline underline-offset-4">Phasit</span> Udompanish</h1>
         <h2>Full-Stack Developer</h2>
-        <img src="../public/images/SIT288cropped.png"
+        <img src="../public/images/SIT288cropped.png" style="max-width: px" />
+        <div class="pr-64">
+          <ul class="timeline timeline-vertical">
+            <li>
+              <div class="timeline-middle">
+                <v-icon name="gi-plain-circle" scale="1.1"></v-icon>
+              </div>
+              <div class="timeline-end timeline-box w-max">Junior Student at SIT KMUTT</div>
+              <hr />
+            </li>
+            <li>
+              <hr />
+              <div class="timeline-middle">
+                <v-icon name="gi-plain-circle" scale="1.1"></v-icon>
+              </div>
+              <div class="timeline-end timeline-box text-sm w-max">
+                Major: Information Technology
+              </div>
+              <hr />
+            </li>
+            <li>
+              <hr />
+              <div class="timeline-middle">
+                <v-icon name="gi-plain-circle" scale="1.1"></v-icon>
+              </div>
+              <div class="timeline-end timeline-box text-sm w-max">Email: pasit8707@gmail.com</div>
+              <hr />
+            </li>
+            <li>
+              <hr />
+              <div class="timeline-middle">
+                <v-icon name="gi-plain-circle" scale="1.1"></v-icon>
+              </div>
+              <div class="timeline-end timeline-box w-max">Phone: 095-9572121</div>
+              <hr />
+            </li>
+            <li>
+              <hr />
+              <div class="timeline-middle">
+                <v-icon name="gi-plain-circle" scale="1.1"></v-icon>
+              </div>
+              <div class="timeline-end timeline-box text-sm w-max">
+                Location: Samutprakarn-Bangkok,<br />
+                Thailand
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="pr-96 mt-4">
+          <div class="w-max">Education & Job Experience</div>
+          <ul class="timeline">
+            <li>
+              <div class="timeline-start italic">2016-2021<br /></div>
+              <div class="timeline-middle">
+                <v-icon name="bi-check-circle-fill" fill="#3fc380"></v-icon>
+              </div>
+              <div
+                data-tip="middle school - high school: received 3 consecutive annual awards for academic excellence and honor student awards"
+                class="tooltip tooltip-right timeline-end timeline-box bg-red-500 text-black font-bold text-center before:whitespace-pre-wrap before:content-[attr(data-tip)]"
+              >
+                ACSP<br /><span class="text-xs">GPAX:3.98</span>
+              </div>
+              <hr style="background-color: #3fc380" />
+            </li>
+            <li>
+              <hr style="background-color: #3fc380" />
+              <div class="timeline-start italic">2022</div>
+              <div class="timeline-middle">
+                <v-icon name="bi-check-circle-fill" fill="#3fc380"></v-icon>
+              </div>
+              <div
+                data-tip="Taught High-school level Mathmatics, Physics, Chemitry, Biology, English and more to highschool students"
+                class="lg:tooltip timeline-end timeline-box bg-blue-500 text-black font-bold underline-offset-2 underline decoration-double"
+              >
+                Tutor
+              </div>
+              <hr style="background-color: #3fc380" />
+            </li>
+            <li>
+              <hr style="background-color: #3fc380" />
+              <div class="timeline-start italic">2022-2025</div>
+              <div class="timeline-middle">
+                <v-icon name="hi-dots-circle-horizontal" fill="#7480ff"></v-icon>
+              </div>
+              <div class="timeline-end timeline-box bg-orange-400 text-black font-bold text-center">
+                SIT KMUTT<br /><span class="text-xs">GPAX:3.99</span>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </aside>
 
     <div class="flex-1 flex flex-col">
       <!-- navbar -->
-      <div class="bg-white border-gray-200 dark:bg-amber-400 h-16">
+      <div class="border-gray-200 bg-amber-400 h-16">
         <div class="flex flex-wrap justify-between items-center">
-          <a class="flex items-center pt-2 pl-3 pr-3 pb-2 bg-orange-500">
-            <v-icon name="io-home-sharp" scale="2.5" />
+          <a class="flex items-center pt-2 pl-3 pr-3 pb-2 bg-white">
+            <RouterLink :to="{ name: 'home' }" class="text-black"
+              ><v-icon name="io-home-sharp" scale="2.5"
+            /></RouterLink>
           </a>
 
           <div class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1">
             <ul class="flex flex-col font-medium lg:flex-row lg:space-x-8">
               <li>
-                <a class="text-black">Resume</a>
+                <RouterLink
+                  :to="{ name: 'resume' }"
+                  class="text-black pt-6 pl-6 pr-6 pb-6"
+                  :style="
+                    $route.name === 'resume'
+                      ? 'background-color: rgb(29, 35, 42); color:white;'
+                      : ''
+                  "
+                  >Resume
+                </RouterLink>
               </li>
               <li>
-                <a class="text-black">Portfolio</a>
+                <a class="text-black pt-2 pl-3 pr-3 pb-2">Portfolio</a>
               </li>
             </ul>
           </div>
@@ -65,7 +165,7 @@ import home from './views/HomeView.vue'
         </div>
       </div>
       <!-- Content -->
-      <div><home> </home></div>
+      <div><RouterView /></div>
     </div>
   </div>
 </template>

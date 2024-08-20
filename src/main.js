@@ -3,11 +3,18 @@ import './assets/main.css'
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import { OhVueIcon, addIcons } from 'oh-vue-icons'
-import { FaFlag, RiZhihuFill, IoHomeSharp } from 'oh-vue-icons/icons'
+import {
+  FaFlag,
+  RiZhihuFill,
+  IoHomeSharp,
+  GiPlainCircle,
+  HiDotsCircleHorizontal,
+  BiCheckCircleFill
+} from 'oh-vue-icons/icons'
 import App from './App.vue'
 import router from './router'
 import ganttastic from '@infectoone/vue-ganttastic'
-addIcons(FaFlag, RiZhihuFill, IoHomeSharp)
+addIcons(FaFlag, RiZhihuFill, IoHomeSharp, GiPlainCircle, HiDotsCircleHorizontal,BiCheckCircleFill)
 
 const app = createApp(App)
 
