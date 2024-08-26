@@ -5,13 +5,15 @@ import home from './views/HomeView.vue'
 
 <template>
   <div class="flex flex-row" style="background-color: rgb(29, 35, 42)">
-    <aside id="default-sidebar" class="top-0 left-0 z-40 w-max h-max" aria-label="Sidebar">
+    <aside id="default-sidebar" class="top-0 left-0 z-40 w-96 .h-screen" aria-label="Sidebar">
       <!-- side content -->
-      <div class="h-full px-3 py-4 overflow-hidden dark:bg-gray-800">
-        <h1><span class="underline underline-offset-4">Phasit</span> Udompanish</h1>
-        <h2>Full-Stack Developer</h2>
-        <img src="../public/images/SIT288cropped.png" style="max-width: px" />
-        <div class="pr-64">
+      <div class="h-full px-3 py-4 overflow-visible dark:bg-gray-800 flex flex-col items-center">
+        <h1 class="self-start">
+          <span class="underline underline-offset-4">Phasit</span> Udompanish
+        </h1>
+        <h2 class="self-start">Full-Stack Developer</h2>
+        <img src="../public/images/SIT288cropped.png" style="max-width: 280px" />
+        <div class="-ml-64 pt-4">
           <ul class="timeline timeline-vertical">
             <li>
               <div class="timeline-middle">
@@ -43,7 +45,7 @@ import home from './views/HomeView.vue'
               <div class="timeline-middle">
                 <v-icon name="gi-plain-circle" scale="1.1"></v-icon>
               </div>
-              <div class="timeline-end timeline-box w-max">Phone: 095-9572121</div>
+              <div class="timeline-end timeline-box w-max">Phone: 095-957-2121</div>
               <hr />
             </li>
             <li>
@@ -58,9 +60,10 @@ import home from './views/HomeView.vue'
             </li>
           </ul>
         </div>
-        <div class="pr-96 mt-4">
-          <div class="w-max">Education & Job Experience</div>
-          <ul class="timeline">
+        <div class="mt-4">
+          <div class="w-max font-bold text-xl underline">Education & Job Experience</div>
+          <div>hover for more details</div>
+          <ul class="-mt-16 timeline">
             <li>
               <div class="timeline-start italic">2016-2021<br /></div>
               <div class="timeline-middle">
@@ -70,7 +73,8 @@ import home from './views/HomeView.vue'
                 data-tip="middle school - high school: received 3 consecutive annual awards for academic excellence and honor student awards"
                 class="tooltip tooltip-right timeline-end timeline-box bg-red-500 text-black font-bold text-center before:whitespace-pre-wrap before:content-[attr(data-tip)]"
               >
-                ACSP<br /><span class="text-xs">GPAX:3.98</span>
+                <span class="underline">Study</span><br /><span class="text-xl">ACSP</span
+                ><br /><span class="text-xs">GPAX:3.98</span>
               </div>
               <hr style="background-color: #3fc380" />
             </li>
@@ -82,9 +86,12 @@ import home from './views/HomeView.vue'
               </div>
               <div
                 data-tip="Taught High-school level Mathmatics, Physics, Chemitry, Biology, English and more to highschool students"
-                class="lg:tooltip timeline-end timeline-box bg-blue-500 text-black font-bold underline-offset-2 underline decoration-double"
+                class="lg:tooltip timeline-end timeline-box bg-blue-500 text-black font-bold underline-offset-2s"
               >
-                Tutor
+                <span class="underline">Work</span><br /><span class="text-lg"
+                  >Freelance<br />
+                  Tutor</span
+                >
               </div>
               <hr style="background-color: #3fc380" />
             </li>
@@ -94,8 +101,12 @@ import home from './views/HomeView.vue'
               <div class="timeline-middle">
                 <v-icon name="hi-dots-circle-horizontal" fill="#7480ff"></v-icon>
               </div>
-              <div class="timeline-end timeline-box bg-orange-400 text-black font-bold text-center">
-                SIT KMUTT<br /><span class="text-xs">GPAX:3.99</span>
+              <div
+                data-tip="Awarded 2 consecutive scholarships award for excellent academic performance"
+                class="tooltip timeline-end timeline-box bg-orange-400 text-black font-bold text-center"
+              >
+                <span class="underline">Study</span><br /><span class="text-xl">SIT KMUTT</span
+                ><br /><span class="text-xs">GPAX:3.99</span>
               </div>
             </li>
           </ul>

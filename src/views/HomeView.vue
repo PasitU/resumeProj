@@ -1,49 +1,264 @@
 <template>
-  <g-gantt-chart
-    chart-start="2020-07-12 12:00"
-    chart-end="2024-07-14 12:00"
-    precision="month"
-    :bar-start="myBeginDate"
-    :bar-end="myEndDate"
-  >
-    <g-gantt-row label="My row 1" :bars="row1BarList" />
-    <g-gantt-row label="My row 2" :bars="row2BarList" />
-  </g-gantt-chart>
+  <div class="flex flex-wrap">
+    <div class="max-w-min border border-black p-4 bg-slate-500 order-4">
+      <div class="flex justify-between">
+        <div class="text-black font-bold">{{ skillRigidity }} Skills</div>
+        <input
+          type="checkbox"
+          class="toggle"
+          :class="
+            !toggling
+              ? 'border-red-500 bg-red-500 hover:bg-red-700'
+              : 'border-blue-500 bg-blue-500 hover:bg-blue-700'
+          "
+          @input="() => console.log(toggling)"
+          checked="checked"
+          v-model="toggling"
+        />
+      </div>
 
-  <div class="tooltip" data-tip="hello">
-    <button class="btn">Hover me</button>
+      <div class="border border-black bg-slate-800 p-3 mt-2">
+        <ul v-show="!toggling">
+          Programming Languages:<span class="flex flex-row gap-2"
+            ><div class="badge badge-primary"><v-icon name="la-java" scale="1.5"></v-icon>Java</div>
+            <div class="badge badge-primary">
+              <v-icon name="co-javascript" scale="1.0"></v-icon>&nbsp;Javascript
+            </div>
+            <div class="badge badge-primary">
+              <v-icon name="co-python" scale="1.0"></v-icon>Python
+            </div></span
+          ><br />
+          Frameworks:<span class="flex flex-row gap-2"
+            ><div class="badge badge-secondary">
+              <v-icon name="co-spring" scale="1.0s"></v-icon>Spring
+            </div>
+            <div class="badge badge-secondary">
+              <v-icon name="io-logo-vue" scale="1.0"></v-icon>&nbsp;VueJs
+            </div>
+            <div class="badge badge-secondary">
+              <v-icon name="co-react" scale="1.0"></v-icon>ReactJs
+            </div></span
+          ><br />
+
+          Tools:<span>
+            <div class="badge badge-accent"><v-icon name="co-figma" scale="1.0"></v-icon>Figma</div>
+            <div class="badge badge-accent"><v-icon name="bi-git" scale="1.0"></v-icon>Git</div>
+            <div class="badge badge-accent">
+              <v-icon name="co-ubuntu" scale="1.0"></v-icon>Linux
+            </div>
+            <br />
+            <div class="badge badge-accent">
+              <v-icon name="co-docker" scale="1.0"></v-icon>Docker
+            </div>
+            <div class="badge badge-accent">
+              <v-icon name="si-apachemaven" scale="1.0"></v-icon>Maven
+            </div>
+            <div class="badge badge-accent"><v-icon name="co-npm" scale="1.0"></v-icon>NPM</div>
+            <br />
+            <div class="badge badge-accent">
+              <v-icon name="co-trello" scale="1.0"></v-icon>Jira/Trello
+            </div>
+            <div class="badge badge-accent">
+              <v-icon name="si-microsoftoffice" scale="1.0"></v-icon>Microsoft Office
+            </div>
+            <br />
+            <div class="badge badge-accent">
+              <v-icon name="si-microsoftazure" scale="1.0"></v-icon>Microsoft Azure
+            </div>
+            <div class="badge badge-accent">
+              <v-icon name="si-cypress" scale="1.0"></v-icon>Cypress
+            </div>
+            <br />
+            <div class="badge badge-accent">
+              <v-icon name="co-postman" scale="1.0"></v-icon>Postman
+            </div>
+          </span>
+          <br />
+          Language Skills:
+          <div class="badge badge-primary">English Language: IELTS Band 7.0</div>
+          <span></span
+          ><br />
+        </ul>
+        <ul v-show="toggling">
+          <div class="w-72">
+            <ul>
+              Non-technical skills:
+              <div class="">
+                <span>
+                  Interpersonal:<br />
+                  <div class="badge badge-accent">Communication and Collaboration</div>
+                  <div class="badge badge-accent">Teaching,Instructing and public speaking</div>
+                  <div class="badge badge-accent">Leadership and management</div>
+                  <br />
+                  Personal skills:<br />
+                  <div class="badge badge-primary">Adaptability</div>
+                  <div class="badge badge-primary">Discipline</div>
+                  <div class="badge badge-primary">Quick learner</div>
+                  <br />
+                  Work related:<br />
+                  <div class="badge badge-secondary">Critical Thinking and Problem solving</div>
+                  <div class="badge badge-secondary">Open-mindedness</div>
+                  <div class="badge badge-secondary">Attentive</div>
+                  <div class="badge badge-secondary">Diligent</div>
+                  <div class="badge badge-secondary">Self directed</div>
+                  <div class="badge badge-secondary">Curiosity</div>
+                </span>
+              </div>
+            </ul>
+          </div>
+        </ul>
+      </div>
+    </div>
+
+    <div class="order-1 border border-black bg-slate-500">
+      <div class="text-black font-bold">My location</div>
+      <div>
+        <body :onload="init()">
+          <div id="map" class="w-96 h-80"></div>
+        </body>
+      </div>
+    </div>
+
+    <div class="order-1 border border-black bg-slate-500 grow">
+      <div>Projects</div>
+      <div class="border border-black bg-slate-800 p-3 mt-2">
+        <div class="join join-vertical w-full">
+          <div class="collapse collapse-arrow join-item border-base-300 border">
+            <input type="radio" name="my-accordion-4" />
+            <div class="collapse-title">
+              <div class="text-xl font-medium italic">KANBAN Board WebApp</div>
+            </div>
+            <div class="collapse-content">
+              <div class="flex gap-3 justify-between">
+                <ul class="list-disc pl-4">
+                  <li>Worked in a SCRUM team to develop a KANBAN task management board WebApp.</li>
+                  <li>
+                    Created REST backend with Spring Boot and MySQL with a plan to implement JWT for
+                    authentication.
+                  </li>
+                  <li>Frontend created using Vue.js with reusable components.</li>
+                  <li>
+                    Appoint and attend daily meetings with a consistent schedule to discuss the
+                    progress.
+                  </li>
+                  <a href="https://github.com/PasitU/ITBBK-Release1" class="text-gray-400">
+                    <v-icon name="io-logo-github" scale="2.5"></v-icon>
+                  </a>
+                </ul>
+                <img src="../../public/images/projects/itbkk_thumb.png" style="max-width: 280px" />
+              </div>
+            </div>
+          </div>
+          <div class="collapse collapse-arrow join-item border-base-300 border">
+            <input type="radio" name="my-accordion-4" />
+            <div class="collapse-title">
+              <div class="text-xl font-medium italic">Online Markdown Parser</div>
+            </div>
+            <div class="collapse-content">
+              <div class="flex gap-3 justify-between">
+                <ul class="list-disc pl-4">
+                  <li>
+                    Created a real-time markdown editor using Vue.js, with simple backend with JSON
+                    Server
+                  </li>
+                  <li>Allow markdown file management and basic user authentication.</li>
+                  <a href="https://github.com/PasitU/ProjectMDParser" class="text-gray-400">
+                    <v-icon name="io-logo-github" scale="2.5"></v-icon>
+                  </a>
+                </ul>
+                <img src="../../public/images/projects/mdps_thumb2.png" style="max-width: 400px" />
+              </div>
+            </div>
+          </div>
+          <div class="collapse collapse-arrow join-item border-base-300 border">
+            <input type="radio" name="my-accordion-4" />
+            <div class="collapse-title">
+              <div class="text-xl font-medium italic">Picross Game with VueJS</div>
+            </div>
+            <div class="collapse-content">
+              <div class="flex gap-3 justify-between">
+                <ul class="list-disc pl-4">
+                  <li>
+                    Single Page Web Application using Vue.js to deliver games of Picross with
+                    varying grid sizes.
+                  </li>
+                  <li>Developed with Scalable difficulty and level designs.</li>
+                  <a href="https://github.com/PasitU/ProjectJS1Picross" class="text-gray-400">
+                    <v-icon name="io-logo-github" scale="2.5"></v-icon>
+                  </a>
+                </ul>
+                <img src="../../public/images/projects/nhx.png" style="max-width: 280px" />
+              </div>
+            </div>
+          </div>
+          <div class="collapse collapse-arrow join-item border-base-300 border">
+            <input type="radio" name="my-accordion-4" />
+            <div class="collapse-title">
+              <div class="text-xl font-medium italic">Personal Web Diary</div>
+            </div>
+            <div class="collapse-content">
+              <div class="flex gap-3 justify-between">
+                <ul class="list-disc pl-4">
+                  <li>Static web diary: developed using pure HTML and CSS</li>
+                  <li>Layout design utilized mainly Grid and Flexbox</li>
+                  <li>Project structure organized for adding new pages to be simple.</li>
+                  <a href="https://github.com/PasitU/Static-Web-Diary-Public" class="text-gray-400">
+                    <v-icon name="io-logo-github" scale="2.5"></v-icon>
+                  </a>
+                </ul>
+                <img
+                  src="../../public/images/projects/wtdiary_thumb.png"
+                  style="max-width: 280px"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+/**CoFigma,
+  BiGit,
+  CoUbuntu,
+  CoDocker,
+  SiApachemaven,
+  CoNpm,
+  CoTrello,
+  SiMicrosoftoffice,
+  SiMicrosoftazure,
+  SiCypress,
+  CoPostman */
+import { ref, computed, onMounted } from 'vue'
+import { loadScript } from 'vue-plugin-load-script'
+onMounted(async () => {
+  try {
+    await loadScript('https://api.longdo.com/map/?key=17853246b2589571f118cff66bdd7899')
+    init()
+  } catch (error) {
+    console.error('Failed to load Longdo script:', error)
+  }
+})
 
-const row1BarList = ref([
-  {
-    myBeginDate: '2021-07-13 13:00',
-    myEndDate: '2021-07-13 19:00',
-    ganttBarConfig: {
-      // each bar must have a nested ganttBarConfig object ...
-      id: 'unique-id-1', // ... and a unique "id" property
-      label: 'Lorem ipsum dolor'
-    }
+let toggling = ref(false)
+const skillRigidity = computed(() => {
+  return toggling.value ? 'Soft' : 'Hard'
+})
+var map
+
+function init() {
+  if (typeof longdo === 'undefined') {
+    console.error('Longdo API is not available.')
+    return
   }
-])
-const row2BarList = ref([
-  {
-    myBeginDate: '2021-07-13 00:00',
-    myEndDate: '2021-07-14 02:00',
-    ganttBarConfig: {
-      id: 'another-unique-id-2',
-      hasHandles: true,
-      label: 'Hey, look at me',
-      style: {
-        // arbitrary CSS styling for your bar
-        background: '#e09b69',
-        borderRadius: '20px',
-        color: 'black'
-      }
-    }
-  }
-])
+
+  map = new longdo.Map({
+    placeholder: document.getElementById('map')
+  })
+  var marker = new longdo.Marker({ lon: 100.532, lat: 13.66 })
+  map.location({ lon: 100.532, lat: 13.66 }, true)
+  map.Overlays.add(marker)
+}
 </script>
