@@ -1,6 +1,7 @@
 <template>
-  <div class="flex flex-wrap">
-    <div class="max-w-min border border-black p-4 bg-slate-500 order-4">
+  <div class="flex flex-wrap gap-3">
+    <!-- skills -->
+    <div class="max-w-min border order-10 border-black p-4 bg-slate-500 order-4">
       <div class="flex justify-between">
         <div class="text-black font-bold">{{ skillRigidity }} Skills</div>
         <input
@@ -109,8 +110,8 @@
         </ul>
       </div>
     </div>
-
-    <div class="order-1 border border-black bg-slate-500">
+    <!-- map -->
+    <div class="order-1 border order-last border-black bg-slate-500">
       <div class="text-black font-bold">My location</div>
       <div>
         <body :onload="init()">
@@ -118,13 +119,13 @@
         </body>
       </div>
     </div>
-
-    <div class="order-1 border border-black bg-slate-500 grow">
-      <div>Projects</div>
+    <!-- Projects -->
+    <div class="order-2 border border-black bg-slate-800 grow">
+      <div class="font-bold text-2xl">My Works & Projects</div>
       <div class="border border-black bg-slate-800 p-3 mt-2">
         <div class="join join-vertical w-full">
           <div class="collapse collapse-arrow join-item border-base-300 border">
-            <input type="radio" name="my-accordion-4" />
+            <input type="radio" name="my-accordion-4" checked="checked" />
             <div class="collapse-title">
               <div class="text-xl font-medium italic">KANBAN Board WebApp</div>
             </div>
@@ -210,6 +211,170 @@
                   src="../../public/images/projects/wtdiary_thumb.png"
                   style="max-width: 280px"
                 />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Carousel -->
+    <div class="order-1 border border-black">
+      <div class="carousel rounded-box w-96">
+        <div id="slide1" class="carousel-item relative w-full">
+          <div class="card bg-base-100 w-96 shadow-xl">
+            <figure>
+              <img
+                src="../../public/images/activities/SIT--288.JPG"
+                alt="me speaking at 2024 orientation"
+              />
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title underline">
+                SIT Orientation 2024, Speaker
+                <div class="badge badge-secondary">NEW</div>
+                <div class="badge badge-accent">2024</div>
+              </h2>
+              <p>
+                Delivered a speech highlighting the importance of respect and professionalism in
+                college environments to 130 freshman students.
+              </p>
+              <div class="card-actions justify-end">
+                <div class="badge badge-outline">Public Speaking</div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="absolute left-5 right-5 top-1/4 flex -translate-y-1/2 transform justify-between"
+          >
+            <a href="#slide4" class="btn btn-circle">❮</a>
+            <a href="#slide2" class="btn btn-circle">❯</a>
+          </div>
+        </div>
+
+        <div id="slide2" class="carousel-item relative w-full">
+          <div class="card bg-base-100 w-96 shadow-xl">
+            <figure>
+              <img
+                src="../../public/images/activities/Khing-2-01.jpg"
+                alt="me speaking at 2024 orientation"
+              />
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title underline">
+                SIT Student Starter Pack, 2024: Instructor
+                <div class="badge badge-secondary">NEW</div>
+                <div class="badge badge-accent">2024</div>
+              </h2>
+              <p>
+                Participated as an instructor: Taught IT fundamentals and design thinking as well as
+                planned and oversaw in-class activities.
+              </p>
+              <div class="card-actions justify-end">
+                <div class="badge badge-outline">Public Speaking</div>
+                <div class="badge badge-outline">Teaching</div>
+                <div class="badge badge-outline">Academic</div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="absolute left-5 right-5 top-1/4 flex -translate-y-1/2 transform justify-between"
+          >
+            <a href="#slide1" class="btn btn-circle">❮</a>
+            <a href="#slide3" class="btn btn-circle">❯</a>
+          </div>
+        </div>
+
+        <div id="slide3" class="carousel-item relative w-full">
+          <div class="card bg-base-100 w-96 shadow-xl">
+            <figure>
+              <img
+                src="../../public/images/activities/Aum-27.jpg"
+                alt="me speaking at 2024 orientation"
+              />
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title underline">
+                Hello World, Extracurricular Teaching Program, 2023: Instructor
+                <div class="badge badge-accent">2023</div>
+              </h2>
+              <p>
+                Participated as an instructor: Taught JS and React framework fundamentals and
+                supervised another instructor during teaching sessions.
+              </p>
+              <div class="card-actions justify-end">
+                <div class="badge badge-outline">Public Speaking</div>
+                <div class="badge badge-outline">Teaching</div>
+                <div class="badge badge-outline">Academic</div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="absolute left-5 right-5 top-1/4 flex -translate-y-1/2 transform justify-between"
+          >
+            <a href="#slide2" class="btn btn-circle">❮</a>
+            <a href="#slide4" class="btn btn-circle">❯</a>
+          </div>
+        </div>
+
+        <div id="slide4" class="carousel-item relative w-full">
+          <div class="card bg-base-100 w-96 shadow-xl">
+            <figure>
+              <img
+                src="../../public/images/activities/Aum-27.jpg"
+                alt="me speaking at 2024 orientation"
+              />
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title underline">
+                Hello World, Extracurricular Teaching Program, 2023: Instructor
+                <div class="badge badge-accent">2023</div>
+              </h2>
+              <p>
+                Participated as an instructor: Taught JS and React framework fundamentals and
+                supervised another instructor during teaching sessions.
+              </p>
+              <div class="card-actions justify-end">
+                <div class="badge badge-outline">Public Speaking</div>
+                <div class="badge badge-outline">Teaching</div>
+                <div class="badge badge-outline">Academic</div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="absolute left-5 right-5 top-1/4 flex -translate-y-1/2 transform justify-between"
+          >
+            <a href="#slide3" class="btn btn-circle">❮</a>
+            <a href="#slide5" class="btn btn-circle">❯</a>
+          </div>
+        </div>
+
+        <div id="slide5" class="carousel-item relative w-full">
+          <div class="card bg-base-100 w-96 shadow-xl">
+            <figure>
+              <img
+                src="../../public/images/activities/Aum-27.jpg"
+                alt="me speaking at 2024 orientation"
+              />
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title underline">
+                Hello World, Extracurricular Teaching Program, 2023: Instructor
+                <div class="badge badge-accent">2023</div>
+              </h2>
+              <p>
+                Participated as an instructor: Taught JS and React framework fundamentals and
+                supervised another instructor during teaching sessions.
+              </p>
+              <div class="card-actions justify-end">
+                <div class="badge badge-outline">Public Speaking</div>
+                <div class="badge badge-outline">Teaching</div>
+                <div class="badge badge-outline">Academic</div>
+              </div>
+              <div
+                class="absolute left-5 right-5 top-1/4 flex -translate-y-1/2 transform justify-between"
+              >
+                <a href="#slide4" class="btn btn-circle">❮</a>
+                <a href="#slide1" class="btn btn-circle">❯</a>
               </div>
             </div>
           </div>
