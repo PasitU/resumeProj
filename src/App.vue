@@ -1,6 +1,11 @@
 <script setup>
 import { RouterLink, RouterView, useRoute } from 'vue-router'
+import { ref } from 'vue'
 import home from './views/HomeView.vue'
+let copyIcon = ref(null)
+function copyText(text) {
+  navigator.clipboard.writeText(text)
+}
 </script>
 
 <template>
@@ -8,11 +13,11 @@ import home from './views/HomeView.vue'
     <aside id="default-sidebar" class="top-0 left-0 z-40 w-96 .h-screen" aria-label="Sidebar">
       <!-- side content -->
       <div class="h-full px-3 py-4 overflow-visible dark:bg-gray-800 flex flex-col items-center">
-        <h1 class="self-start">
+        <h1 class="self-start text-3xl font-lost">
           <span class="underline underline-offset-4">Phasit</span> Udompanish
         </h1>
-        <h2 class="self-start">Full-Stack Developer</h2>
-        <img src="../public/images/SIT288cropped.png" style="max-width: 280px" />
+        <h2 class="self-start text-xl underline font-mono">Full-Stack Developer</h2>
+        <img class="mt-4" src="../public/images/SIT288cropped.png" style="max-width: 280px" />
         <div class="-ml-64 pt-4">
           <ul class="timeline timeline-vertical">
             <li>
@@ -27,9 +32,7 @@ import home from './views/HomeView.vue'
               <div class="timeline-middle">
                 <v-icon name="gi-plain-circle" scale="1.1"></v-icon>
               </div>
-              <div class="timeline-end timeline-box text-sm w-max">
-                Major: Information Technology
-              </div>
+              <div class="timeline-end timeline-box w-max">Major: Information Technology</div>
               <hr />
             </li>
             <li>
@@ -37,7 +40,16 @@ import home from './views/HomeView.vue'
               <div class="timeline-middle">
                 <v-icon name="gi-plain-circle" scale="1.1"></v-icon>
               </div>
-              <div class="timeline-end timeline-box text-sm w-max">Email: pasit8707@gmail.com</div>
+              <div
+                class="timeline-end timeline-box w-max cursor-pointer"
+                @click="copyText('pasit8707@gmail.com')"
+              >
+                Email: pasit8707@gmail.com<v-icon
+                  name="co-copy"
+                  scale="1.2"
+                  ref="copyIcon"
+                ></v-icon>
+              </div>
               <hr />
             </li>
             <li>
@@ -116,14 +128,14 @@ import home from './views/HomeView.vue'
 
     <div class="flex-1 flex flex-col">
       <!-- navbar -->
-      <div class="border-gray-200 bg-amber-400 h-16">
+      <div class="border-gray-200 bg-zinc-400 h-16">
         <div class="flex flex-wrap pt-4 justify-between items-center">
           <div class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1">
             <ul class="flex font-medium">
               <li>
                 <RouterLink
                   :to="{ name: 'resume' }"
-                  class="text-black pt-6 pl-6 pr-6 pb-6"
+                  class="font-lost text-neutral-800 pt-6 pl-6 pr-6 pb-6"
                   :style="
                     $route.name === 'resume'
                       ? 'background-color: rgb(29, 35, 42); color:white;'
@@ -134,10 +146,12 @@ import home from './views/HomeView.vue'
               </li>
               <li>
                 <RouterLink
-                  :to="{ name: 'home' }"
-                  class="text-black pt-6 pl-6 pr-6 pb-6"
+                  :to="{ name: 'portfolio' }"
+                  class="font-lost text-neutral-800 pt-6 pl-6 pr-6 pb-6"
                   :style="
-                    $route.name === 'home' ? 'background-color: rgb(29, 35, 42); color:white;' : ''
+                    $route.name === 'portfolio'
+                      ? 'background-color: rgb(29, 35, 42); color:white;'
+                      : ''
                   "
                 >
                   <a class="pt-2 pl-3 pr-3 pb-2">Portfolio (Under Construction)</a>
@@ -183,4 +197,9 @@ import home from './views/HomeView.vue'
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+@font-face {
+  font-family: 'dragalia';
+  src: url(../public/fonts/dragalia.otf);
+}
+</style>

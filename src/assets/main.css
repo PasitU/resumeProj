@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'dragalia';
+    font-weight: 200;
+    src: url(../../public/fonts/dragalia.otf) format('otf');
+  }
+}

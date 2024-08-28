@@ -1,9 +1,9 @@
 <template>
   <div class="flex flex-wrap gap-3">
     <!-- skills -->
-    <div class="w-4/12 border order-10 border-black p-4 bg-slate-500">
+    <div class="w-4/12 border order-10 border-black p-4 bg-zinc-500">
       <div class="flex justify-between">
-        <div class="text-black font-bold">{{ skillRigidity }} Skills</div>
+        <div class="text-black font-bold text-2xl">{{ skillRigidity }} Skills</div>
         <input
           type="checkbox"
           class="toggle"
@@ -111,7 +111,7 @@
     </div>
     <!-- map -->
     <div class="border order-last border-black bg-slate-500 grow flex flex-col">
-      <div class="text-black font-bold">My location</div>
+      <div class="text-black text-2xl font-bold font-lost">My location</div>
       <div>
         <body :onload="init()">
           <div id="map" class="grow h-80"></div>
@@ -120,13 +120,13 @@
     </div>
     <!-- Projects -->
     <div class="order-2 border border-black bg-slate-800 w-7/12">
-      <div class="font-bold text-2xl">My Works & Projects</div>
+      <div class="font-bold pl-3 font-mono text-4xl pt-3">My Works & Projects</div>
       <div class="border border-black bg-slate-800 p-3 mt-2">
         <div class="join join-vertical w-full">
           <div class="collapse collapse-arrow join-item border-base-300 border">
             <input type="radio" name="my-accordion-4" checked="checked" />
             <div class="collapse-title">
-              <div class="text-xl font-medium italic">KANBAN Board WebApp</div>
+              <div class="text-3xl font-medium italic">KANBAN Board WebApp</div>
             </div>
             <div class="collapse-content">
               <div class="flex gap-3 justify-between">
@@ -152,7 +152,7 @@
           <div class="collapse collapse-arrow join-item border-base-300 border">
             <input type="radio" name="my-accordion-4" />
             <div class="collapse-title">
-              <div class="text-xl font-medium italic">Online Markdown Parser</div>
+              <div class="text-3xl font-medium italic">Online Markdown Parser</div>
             </div>
             <div class="collapse-content">
               <div class="flex gap-3 justify-between">
@@ -173,7 +173,7 @@
           <div class="collapse collapse-arrow join-item border-base-300 border">
             <input type="radio" name="my-accordion-4" />
             <div class="collapse-title">
-              <div class="text-xl font-medium italic">Picross Game with VueJS</div>
+              <div class="text-3xl font-medium italic">Picross Game with VueJS</div>
             </div>
             <div class="collapse-content">
               <div class="flex gap-3 justify-between">
@@ -194,7 +194,7 @@
           <div class="collapse collapse-arrow join-item border-base-300 border">
             <input type="radio" name="my-accordion-4" />
             <div class="collapse-title">
-              <div class="text-xl font-medium italic">Personal Web Diary</div>
+              <div class="text-3xl font-medium italic">Personal Web Diary</div>
             </div>
             <div class="collapse-content">
               <div class="flex gap-3 justify-between">
@@ -219,7 +219,7 @@
     <!-- Carousel -->
     <div class="order-1 flex">
       <div cla>
-        <ul class="menu rounded-box w-56 h-full border border-black bg-zinc-800">
+        <ul class="menu rounded-box w-56 h-full border border-black bg-zinc-800 font-lost">
           <li><a href="#slide1">SIT Orientation 2024, Speaker</a></li>
           <hr />
           <li><a href="#slide2">SIT Student Starter Pack, 2024: Instructor</a></li>
@@ -228,7 +228,7 @@
           <hr />
 
           <li>
-            <a href="#slide4">Hello World, Extracurricular Teaching Program, 2023: Instructor</a>
+            <a href="#slide4">Hello World, 2023: Instructor</a>
           </li>
           <hr />
           <li><a href="#slide5">2 Scholarship awards</a></li>
@@ -479,10 +479,10 @@
           <div class="tooltip" data-tip="Photography">
             <div><v-icon name="bi-camera-fill" scale="5.0"></v-icon></div>
           </div>
-          <div class="tooltip" data-tip="Learning new Programming Language and Coding">
+          <div class="tooltip" data-tip="Coding & Programming">
             <div><v-icon name="hi-code" scale="5.0"></v-icon></div>
           </div>
-          <div class="tooltip" data-tip="Teaching and Instructing others">
+          <div class="tooltip" data-tip="Teaching and Instructing">
             <div><v-icon name="gi-teacher" scale="5.0"></v-icon></div>
           </div>
           <div class="tooltip" data-tip="Learn problem solving through interactive softwares">

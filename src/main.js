@@ -34,7 +34,8 @@ import {
   PiLucario,
   GiTeacher,
   GiRetroController,
-  IoExtensionPuzzleSharp
+  IoExtensionPuzzleSharp,
+  CoCopy
 } from 'oh-vue-icons/icons'
 import App from './App.vue'
 import router from './router'
@@ -70,7 +71,8 @@ addIcons(
   GiTeacher,
   GiRetroController,
   IoExtensionPuzzleSharp,
-  PiLucario
+  PiLucario,
+  CoCopy
 )
 import LoadScript from 'vue-plugin-load-script'
 
