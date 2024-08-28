@@ -117,9 +117,9 @@ import home from './views/HomeView.vue'
     <div class="flex-1 flex flex-col">
       <!-- navbar -->
       <div class="border-gray-200 bg-amber-400 h-16">
-        <div class="flex flex-wrap justify-between items-center">
+        <div class="flex flex-wrap pt-4 justify-between items-center">
           <div class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1">
-            <ul class="flex flex-col font-medium lg:flex-row lg:space-x-8">
+            <ul class="flex font-medium">
               <li>
                 <RouterLink
                   :to="{ name: 'resume' }"
@@ -140,7 +140,7 @@ import home from './views/HomeView.vue'
                     $route.name === 'home' ? 'background-color: rgb(29, 35, 42); color:white;' : ''
                   "
                 >
-                  <a class="text-black pt-2 pl-3 pr-3 pb-2">Portfolio</a>
+                  <a class="pt-2 pl-3 pr-3 pb-2">Portfolio (Under Construction)</a>
                 </RouterLink>
               </li>
             </ul>

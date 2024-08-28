@@ -110,11 +110,11 @@
       </div>
     </div>
     <!-- map -->
-    <div class="border order-last border-black bg-slate-500">
+    <div class="border order-last border-black bg-slate-500 grow flex flex-col">
       <div class="text-black font-bold">My location</div>
       <div>
         <body :onload="init()">
-          <div id="map" class="w-96 h-80"></div>
+          <div id="map" class="grow h-80"></div>
         </body>
       </div>
     </div>
@@ -467,12 +467,12 @@
       </div>
     </div>
 
-    <div class="order-12 w-1/3 flex">
+    <div class="order-12">
       <div class="mockup-browser h-full bg-base-300 border">
         <div class="mockup-browser-toolbar">
           <div class="input">https://myinterests.net</div>
         </div>
-        <div class="bg-base-200 px-4 py-10 grid grid-cols-3 gap-4 justify-between">
+        <div class="bg-base-200 px-4 py-10 grid grid-cols-3 gap-4 justify-between overflow-hidden">
           <div class="tooltip" data-tip="Music">
             <div><v-icon name="io-musical-note-sharp" scale="5.0"></v-icon></div>
           </div>

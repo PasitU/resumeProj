@@ -1,6 +1,6 @@
 <template>
   Notable Activities and Achievements
-  <div class="bg-slate-600 rounded-md mt-2 ml-2 mr-2 flex overflow-x-scroll flex-nowrap gap-3">
+  <div class="bg-slate-600 rounded-md mt-2 ml-2 mr-2 flex overflow-x-scroll flex-wrap gap-3">
     <div class="card bg-base-100 w-96 shadow-xl">
       <figure>
         <img
