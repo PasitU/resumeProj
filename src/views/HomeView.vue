@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-wrap gap-3">
     <!-- skills -->
-    <div class="max-w-min border order-10 border-black p-4 bg-slate-500 order-4">
+    <div class="w-4/12 border order-10 border-black p-4 bg-slate-500">
       <div class="flex justify-between">
         <div class="text-black font-bold">{{ skillRigidity }} Skills</div>
         <input
@@ -17,7 +17,6 @@
           v-model="toggling"
         />
       </div>
-
       <div class="border border-black bg-slate-800 p-3 mt-2">
         <ul v-show="!toggling">
           Programming Languages:<span class="flex flex-row gap-2"
@@ -47,29 +46,29 @@
             <div class="badge badge-accent">
               <v-icon name="co-ubuntu" scale="1.0"></v-icon>Linux
             </div>
-            <br />
             <div class="badge badge-accent">
               <v-icon name="co-docker" scale="1.0"></v-icon>Docker
             </div>
             <div class="badge badge-accent">
               <v-icon name="si-apachemaven" scale="1.0"></v-icon>Maven
             </div>
-            <div class="badge badge-accent"><v-icon name="co-npm" scale="1.0"></v-icon>NPM</div>
             <br />
+            <div class="badge badge-accent"><v-icon name="co-npm" scale="1.0"></v-icon>NPM</div>
+
             <div class="badge badge-accent">
               <v-icon name="co-trello" scale="1.0"></v-icon>Jira/Trello
             </div>
             <div class="badge badge-accent">
               <v-icon name="si-microsoftoffice" scale="1.0"></v-icon>Microsoft Office
             </div>
-            <br />
             <div class="badge badge-accent">
               <v-icon name="si-microsoftazure" scale="1.0"></v-icon>Microsoft Azure
             </div>
+            <br />
             <div class="badge badge-accent">
               <v-icon name="si-cypress" scale="1.0"></v-icon>Cypress
             </div>
-            <br />
+
             <div class="badge badge-accent">
               <v-icon name="co-postman" scale="1.0"></v-icon>Postman
             </div>
@@ -111,7 +110,7 @@
       </div>
     </div>
     <!-- map -->
-    <div class="order-1 border order-last border-black bg-slate-500">
+    <div class="border order-last border-black bg-slate-500">
       <div class="text-black font-bold">My location</div>
       <div>
         <body :onload="init()">
@@ -120,7 +119,7 @@
       </div>
     </div>
     <!-- Projects -->
-    <div class="order-2 border border-black bg-slate-800 grow">
+    <div class="order-2 border border-black bg-slate-800 w-7/12">
       <div class="font-bold text-2xl">My Works & Projects</div>
       <div class="border border-black bg-slate-800 p-3 mt-2">
         <div class="join join-vertical w-full">
@@ -218,8 +217,33 @@
       </div>
     </div>
     <!-- Carousel -->
-    <div class="order-1 border border-black">
-      <div class="carousel rounded-box w-96">
+    <div class="order-1 flex">
+      <div cla>
+        <ul class="menu rounded-box w-56 h-full border border-black bg-zinc-800">
+          <li><a href="#slide1">SIT Orientation 2024, Speaker</a></li>
+          <hr />
+          <li><a href="#slide2">SIT Student Starter Pack, 2024: Instructor</a></li>
+          <hr />
+          <li><a href="#slide3">IELTS Score of Band 7</a></li>
+          <hr />
+
+          <li>
+            <a href="#slide4">Hello World, Extracurricular Teaching Program, 2023: Instructor</a>
+          </li>
+          <hr />
+          <li><a href="#slide5">2 Scholarship awards</a></li>
+          <hr />
+          <li><a href="#slide6">Mock TOEIC: Scored 960</a></li>
+          <hr />
+
+          <li><a href="#slide7">Microsoft Build After Party, 2023</a></li>
+          <hr />
+          <li><a href="#slide8">Microsoft Learn Challenges Completed</a></li>
+          <hr />
+          <li><a href="#slide9">SIT Student Starter Pack, 2022: Student </a></li>
+        </ul>
+      </div>
+      <div class="carousel rounded-box w-96 border border-black bg-slate-800">
         <div id="slide1" class="carousel-item relative w-full">
           <div class="card bg-base-100 w-96 shadow-xl">
             <figure>
@@ -228,7 +252,7 @@
                 alt="me speaking at 2024 orientation"
               />
             </figure>
-            <div class="card-body">
+            <div class="card-body bg-zinc-700">
               <h2 class="card-title underline">
                 SIT Orientation 2024, Speaker
                 <div class="badge badge-secondary">NEW</div>
@@ -243,12 +267,6 @@
               </div>
             </div>
           </div>
-          <div
-            class="absolute left-5 right-5 top-1/4 flex -translate-y-1/2 transform justify-between"
-          >
-            <a href="#slide4" class="btn btn-circle">❮</a>
-            <a href="#slide2" class="btn btn-circle">❯</a>
-          </div>
         </div>
 
         <div id="slide2" class="carousel-item relative w-full">
@@ -259,7 +277,7 @@
                 alt="me speaking at 2024 orientation"
               />
             </figure>
-            <div class="card-body">
+            <div class="card-body bg-zinc-700">
               <h2 class="card-title underline">
                 SIT Student Starter Pack, 2024: Instructor
                 <div class="badge badge-secondary">NEW</div>
@@ -276,43 +294,26 @@
               </div>
             </div>
           </div>
-          <div
-            class="absolute left-5 right-5 top-1/4 flex -translate-y-1/2 transform justify-between"
-          >
-            <a href="#slide1" class="btn btn-circle">❮</a>
-            <a href="#slide3" class="btn btn-circle">❯</a>
-          </div>
         </div>
-
         <div id="slide3" class="carousel-item relative w-full">
           <div class="card bg-base-100 w-96 shadow-xl">
             <figure>
               <img
-                src="../../public/images/activities/Aum-27.jpg"
+                src="../../public/images/activities/IELTS.jpg"
                 alt="me speaking at 2024 orientation"
               />
             </figure>
-            <div class="card-body">
+            <div class="card-body bg-zinc-700">
               <h2 class="card-title underline">
-                Hello World, Extracurricular Teaching Program, 2023: Instructor
-                <div class="badge badge-accent">2023</div>
+                IELTS Score of Band 7
+                <div class="badge badge-accent">2022</div>
               </h2>
-              <p>
-                Participated as an instructor: Taught JS and React framework fundamentals and
-                supervised another instructor during teaching sessions.
-              </p>
               <div class="card-actions justify-end">
-                <div class="badge badge-outline">Public Speaking</div>
-                <div class="badge badge-outline">Teaching</div>
+                <div class="badge badge-outline">English</div>
+                <div class="badge badge-outline">Language</div>
                 <div class="badge badge-outline">Academic</div>
               </div>
             </div>
-          </div>
-          <div
-            class="absolute left-5 right-5 top-1/4 flex -translate-y-1/2 transform justify-between"
-          >
-            <a href="#slide2" class="btn btn-circle">❮</a>
-            <a href="#slide4" class="btn btn-circle">❯</a>
           </div>
         </div>
 
@@ -324,7 +325,7 @@
                 alt="me speaking at 2024 orientation"
               />
             </figure>
-            <div class="card-body">
+            <div class="card-body bg-zinc-700">
               <h2 class="card-title underline">
                 Hello World, Extracurricular Teaching Program, 2023: Instructor
                 <div class="badge badge-accent">2023</div>
@@ -339,12 +340,6 @@
                 <div class="badge badge-outline">Academic</div>
               </div>
             </div>
-          </div>
-          <div
-            class="absolute left-5 right-5 top-1/4 flex -translate-y-1/2 transform justify-between"
-          >
-            <a href="#slide3" class="btn btn-circle">❮</a>
-            <a href="#slide5" class="btn btn-circle">❯</a>
           </div>
         </div>
 
@@ -352,31 +347,149 @@
           <div class="card bg-base-100 w-96 shadow-xl">
             <figure>
               <img
-                src="../../public/images/activities/Aum-27.jpg"
+                src="../../public/images/activities/156090.jpg"
                 alt="me speaking at 2024 orientation"
               />
             </figure>
-            <div class="card-body">
+            <div class="card-body bg-zinc-700">
               <h2 class="card-title underline">
-                Hello World, Extracurricular Teaching Program, 2023: Instructor
-                <div class="badge badge-accent">2023</div>
+                Received two Scholarship awards for outstanding academic performance, 2023, 2024.
               </h2>
-              <p>
-                Participated as an instructor: Taught JS and React framework fundamentals and
-                supervised another instructor during teaching sessions.
-              </p>
+              <div class="flex gap-2">
+                <div class="badge badge-secondary">NEW</div>
+                <div class="badge badge-accent">2023</div>
+                <div class="badge badge-accent">2024</div>
+              </div>
+              <div class="card-actions justify-end">
+                <div class="badge badge-outline">Academic</div>
+                <div class="badge badge-outline">Award</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="slide6" class="carousel-item relative w-full">
+          <div class="card bg-base-100 w-96 shadow-xl">
+            <figure>
+              <img
+                src="../../public/images/activities/toeic.png"
+                alt="me speaking at 2024 orientation"
+              />
+            </figure>
+            <div class="card-body bg-zinc-700">
+              <h2 class="card-title underline">
+                Mock TOEIC:<br />
+                Scored 960
+                <div class="badge badge-secondary">NEW</div>
+                <div class="badge badge-accent">2024</div>
+              </h2>
+              <p>Achieved the score of 960 in a mock toeic exam held by SIT KMUTT.</p>
               <div class="card-actions justify-end">
                 <div class="badge badge-outline">Public Speaking</div>
                 <div class="badge badge-outline">Teaching</div>
                 <div class="badge badge-outline">Academic</div>
               </div>
-              <div
-                class="absolute left-5 right-5 top-1/4 flex -translate-y-1/2 transform justify-between"
-              >
-                <a href="#slide4" class="btn btn-circle">❮</a>
-                <a href="#slide1" class="btn btn-circle">❯</a>
+            </div>
+          </div>
+        </div>
+
+        <div id="slide7" class="carousel-item relative w-full">
+          <div class="card bg-base-100 w-96 shadow-xl">
+            <figure>
+              <img
+                src="../../public/images/activities/ms.jpg"
+                alt="me speaking at 2024 orientation"
+              />
+            </figure>
+            <div class="card-body bg-zinc-700">
+              <h2 class="card-title underline">
+                Microsoft Build After Party, 2023
+                <div class="badge badge-accent">2023</div>
+              </h2>
+              <p>
+                Participated and learned about the latest innovations utilizing Artificial
+                Intelligence LLM models such as copilot and PowerBI, etc.
+              </p>
+              <div class="card-actions justify-end">
+                <div class="badge badge-outline">Technical</div>
+                <div class="badge badge-outline">Seminar</div>
               </div>
             </div>
+          </div>
+        </div>
+
+        <div id="slide8" class="carousel-item relative w-full">
+          <div class="card bg-base-100 w-96 shadow-xl">
+            <figure>
+              <img
+                src="../../public/images/activities/msl.png"
+                alt="me speaking at 2024 orientation"
+              />
+            </figure>
+            <div class="card-body bg-zinc-700">
+              <h2 class="card-title underline">
+                Microsoft Learn Challenges Completed
+                <div class="badge badge-accent">2023</div>
+              </h2>
+              <ul class="list-disc">
+                <li>Student Technical Training</li>
+                <li>GitHub and Azure for Developers</li>
+              </ul>
+              <div class="card-actions justify-end">
+                <div class="badge badge-outline">Technical</div>
+                <div class="badge badge-outline">Seminar</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="slide9" class="carousel-item relative w-full">
+          <div class="card bg-base-100 w-96 shadow-xl">
+            <figure>
+              <img
+                src="../../public/images/activities/Title-2-36.jpg"
+                alt="me speaking at 2024 orientation"
+              />
+            </figure>
+            <div class="card-body bg-zinc-700">
+              <h2 class="card-title underline">
+                SIT Student Starter Pack, 2022: Student
+                <div class="badge badge-accent">2022</div>
+              </h2>
+              <p>Participated as a student: Learned basics of web development and programming.</p>
+              <div class="card-actions justify-end">
+                <div class="badge badge-outline">Technical</div>
+                <div class="badge badge-outline">Seminar</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="order-12 w-1/3 flex">
+      <div class="mockup-browser h-full bg-base-300 border">
+        <div class="mockup-browser-toolbar">
+          <div class="input">https://myinterests.net</div>
+        </div>
+        <div class="bg-base-200 px-4 py-10 grid grid-cols-3 gap-4 justify-between">
+          <div class="tooltip" data-tip="Music">
+            <div><v-icon name="io-musical-note-sharp" scale="5.0"></v-icon></div>
+          </div>
+          <div class="tooltip" data-tip="Photography">
+            <div><v-icon name="bi-camera-fill" scale="5.0"></v-icon></div>
+          </div>
+          <div class="tooltip" data-tip="Learning new Programming Language and Coding">
+            <div><v-icon name="hi-code" scale="5.0"></v-icon></div>
+          </div>
+          <div class="tooltip" data-tip="Teaching and Instructing others">
+            <div><v-icon name="gi-teacher" scale="5.0"></v-icon></div>
+          </div>
+          <div class="tooltip" data-tip="Learn problem solving through interactive softwares">
+            <div><v-icon name="gi-retro-controller" scale="5.0"></v-icon></div>
+          </div>
+          <div class="tooltip" data-tip="Solving puzzles games">
+            <div><v-icon name="io-extension-puzzle-sharp" scale="5.0"></v-icon></div>
           </div>
         </div>
       </div>
@@ -385,17 +498,12 @@
 </template>
 
 <script setup>
-/**CoFigma,
-  BiGit,
-  CoUbuntu,
-  CoDocker,
-  SiApachemaven,
-  CoNpm,
-  CoTrello,
-  SiMicrosoftoffice,
-  SiMicrosoftazure,
-  SiCypress,
-  CoPostman */
+/**  IoMusicalNoteSharp,
+  BiCameraFill,
+  HiCode,
+  GiTeacher,
+  GiRetroController,
+  IoExtensionPuzzleSharp, */
 import { ref, computed, onMounted } from 'vue'
 import { loadScript } from 'vue-plugin-load-script'
 onMounted(async () => {
@@ -419,9 +527,11 @@ function init() {
     return
   }
 
+  // eslint-disable-next-line no-undef
   map = new longdo.Map({
     placeholder: document.getElementById('map')
   })
+  // eslint-disable-next-line no-undef
   var marker = new longdo.Marker({ lon: 100.532, lat: 13.66 })
   map.location({ lon: 100.532, lat: 13.66 }, true)
   map.Overlays.add(marker)

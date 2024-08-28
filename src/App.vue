@@ -118,12 +118,6 @@ import home from './views/HomeView.vue'
       <!-- navbar -->
       <div class="border-gray-200 bg-amber-400 h-16">
         <div class="flex flex-wrap justify-between items-center">
-          <a class="flex items-center pt-2 pl-3 pr-3 pb-2 bg-white">
-            <RouterLink :to="{ name: 'home' }" class="text-black"
-              ><v-icon name="io-home-sharp" scale="2.5"
-            /></RouterLink>
-          </a>
-
           <div class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1">
             <ul class="flex flex-col font-medium lg:flex-row lg:space-x-8">
               <li>
@@ -139,7 +133,15 @@ import home from './views/HomeView.vue'
                 </RouterLink>
               </li>
               <li>
-                <a class="text-black pt-2 pl-3 pr-3 pb-2">Portfolio</a>
+                <RouterLink
+                  :to="{ name: 'home' }"
+                  class="text-black pt-6 pl-6 pr-6 pb-6"
+                  :style="
+                    $route.name === 'home' ? 'background-color: rgb(29, 35, 42); color:white;' : ''
+                  "
+                >
+                  <a class="text-black pt-2 pl-3 pr-3 pb-2">Portfolio</a>
+                </RouterLink>
               </li>
             </ul>
           </div>

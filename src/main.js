@@ -27,7 +27,14 @@ import {
   SiMicrosoftazure,
   SiCypress,
   CoPostman,
-  IoLogoGithub
+  IoLogoGithub,
+  IoMusicalNoteSharp,
+  BiCameraFill,
+  HiCode,
+  PiLucario,
+  GiTeacher,
+  GiRetroController,
+  IoExtensionPuzzleSharp
 } from 'oh-vue-icons/icons'
 import App from './App.vue'
 import router from './router'
@@ -56,7 +63,14 @@ addIcons(
   SiMicrosoftazure,
   SiCypress,
   CoPostman,
-  IoLogoGithub
+  IoLogoGithub,
+  IoMusicalNoteSharp,
+  BiCameraFill,
+  HiCode,
+  GiTeacher,
+  GiRetroController,
+  IoExtensionPuzzleSharp,
+  PiLucario
 )
 import LoadScript from 'vue-plugin-load-script'
 
